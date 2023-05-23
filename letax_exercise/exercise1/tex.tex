@@ -1,0 +1,239 @@
+%\begin{设置文本类型、引入宏包}
+\documentclass[12pt,a4paper]{ctexart}%文本类型，文本类型为中文文章
+\usepackage[utf8]{inputenc}%所使用的宏包
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}%常用的数学宏包
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\RequirePackage{caption}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{makecell}%表格内换行的宏包
+\usepackage{diagbox}
+\usepackage{listings}
+\usepackage[colorlinks, linkcolor=black, anchorcolor=blue, citecolor=black]{hyperref}
+\usepackage{tikz}
+\usepackage{pxfonts}
+\usepackage{geometry}
+\usepackage{setspace}
+%\usepackage{mathrsfs}%数学字体宏包
+\usepackage{amsfonts}%数学字体宏包
+\usepackage{bm}%数学符号加粗
+\usepackage{comment}%批量注释的宏包
+%\end{设置文本类型、引入宏包}
+\usepackage{boxedminipage}
+\usepackage{shadow}
+
+%\begin{设置页面尺寸}
+\setstretch{1} 
+\geometry{a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm}
+%\end{设置页面尺寸}
+
+%字号的设置用\zihao{*} 其中*为数字，-4为小四，4为四号，3为三号
+%字体的设置用	{\songti 宋体}、{\heiti 黑体}、{\fangsong 仿宋}、{\kaishu 楷书}，使用时把字加在花括号内如{\songti 同济大学}
+%不使用上述代码时默认宋体小四
+
+%\begin{抄录代码环境lstlisting的设置}，不需要comment环境注释掉即可
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Python,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+%\end{抄录代码环境lstlisting的设置}
+
+%\begin{页眉页脚设置}
+\pagestyle{fancy}
+\fancyhf{} %清除原页眉页脚样式
+\renewcommand{\headrulewidth}{0mm} % 设置页眉页脚横线及样式 %页眉线宽，设为0可以去页眉线
+\renewcommand{\footrulewidth}{0mm} %页脚线宽，设为0可以去页眉线
+\cfoot{\thepage} 
+%\end{页眉页脚设置}
+
+%\begin{正文开始}
+\begin{document}
+
+\centerline{\zihao{2}{\heiti 数学公式编辑}}
+
+~\\
+
+\noindent {\zihao{4} {\heiti 一、球坐标}}
+
+~\\
+
+\noindent \setlength\sdim{10pt}
+\shabox{\parbox{7cm}{$\left\{
+            \begin{array}{lcl}
+                x=r\sin\varphi\cos\theta, &  & {0\leqslant\varphi\leqslant\pi}  \\
+                y=r\sin\varphi\sin\theta, &  & {0\leqslant\theta\leqslant 2\pi} \\
+                z=a\cos\varphi.           &  & {}                               \\
+            \end{array}
+            \right.$}}
+
+~\\
+
+\begin{lstlisting}
+$\left\{
+\begin{array}{lcl}
+	x=r\sin\varphi\cos\theta,  &     &{0\leqslant\varphi\leqslant\pi}\\
+	y=r\sin\varphi\sin\theta,  &     &{0\leqslant\theta\leqslant 2\pi}\\
+	z=a\cos\varphi.            &     &{}\\
+\end{array}
+\right.$
+\end{lstlisting}
+
+~\\
+
+\noindent {\zihao{4}{\heiti 二、雅可比式}}
+
+~\\
+
+\noindent \setlength\sdim{10pt}
+\shabox{\parbox{5cm}{$J=\cfrac{\partial (F,G)}{\partial (\mu ,\nu)}=\begin{vmatrix}\cfrac{\partial F}{\partial \mu}&\cfrac{\partial F}{\partial \nu}\\\cfrac{\partial G}{\partial \mu}&\cfrac{\partial G}{\partial \nu}\end{vmatrix}$}}
+
+~\\
+
+\begin{lstlisting}
+$J=\cfrac{\partial (F,G)}{\partial (\mu ,\nu)}=\begin{vmatrix}\cfrac{\partial F}{\partial \mu}&\cfrac{\partial F}{\partial \nu}\\\cfrac{\partial G}{\partial \mu}&\cfrac{\partial G}{\partial \nu}\end{vmatrix}$
+\end{lstlisting}
+
+~\\
+
+\noindent {\zihao{4}{\heiti 三、拉格朗日乘数法}}
+
+~\\
+
+\noindent \setlength\sdim{10pt}
+\shabox{\parbox{5cm}{$\left\{
+            \begin{array}{l}
+                f_{x}(x,y)+\lambda{\varphi}_{x}(x,y)=0, \\
+                f_{y}(x,y)+\lambda{\varphi}_{y}(x,y)=0, \\
+                \varphi (x,y)=0.
+            \end{array}\right.$}}
+
+\clearpage
+
+\begin{lstlisting}
+$\left\{
+\begin{array}{l}
+	f_{x}(x,y)+\lambda{\varphi}_{x}(x,y)=0,\\
+	f_{y}(x,y)+\lambda{\varphi}_{y}(x,y)=0,\\
+	\varphi (x,y)=0.
+\end{array}\right.$
+\end{lstlisting}
+
+~\\
+
+\noindent {\zihao{4}{\heiti 四、二元函数的泰勒公式}}
+
+~\\
+
+\noindent \setlength\sdim{10pt}
+\shabox{\parbox{14cm}{$\begin{aligned}
+                f(x_{0}+h,y_{0}+h)= & f(x_{0},y_{0})+(h\cfrac{\partial}{\partial x}+k\cfrac{\partial}{\partial y})f(x_{0},y_{0})+                                                                                                          \\
+                                    & \cfrac{1}{2!}(h\cfrac{\partial}{\partial x}+k\cfrac{\partial }{\partial x})^{2}f(x_{0},y_{0})+\cdots +\cfrac{1}{n!}(h\cfrac{\partial}{\partial x}+k\cfrac{\partial }{\partial x})^{n}f(x_{0},y_{0})+ \\
+                                    & \cfrac{1}{(n+1)!}(h\cfrac{\partial}{\partial x}+k\cfrac{\partial }{\partial x})^{n+1}f(x_{0}+\theta h,y_{0}+\theta k)\quad (x<\theta <1).
+            \end{aligned}$}}
+
+~\\
+
+\begin{lstlisting}
+$\begin{aligned}
+	f(x_{0}+h,y_{0}+h)=&f(x_{0},y_{0})+(h\cfrac{\partial}{\partial x}+k\cfrac{\partial}{\partial y})f(x_{0},y_{0})+\\
+	&\cfrac{1}{2!}(h\cfrac{\partial}{\partial x}+k\cfrac{\partial }{\partial x})^{2}f(x_{0},y_{0})+\cdots +\cfrac{1}{n!}(h\cfrac{\partial}{\partial x}+k\cfrac{\partial }{\partial x})^{n}f(x_{0},y_{0})+\\
+	&\cfrac{1}{(n+1)!}(h\cfrac{\partial}{\partial x}+k\cfrac{\partial }{\partial x})^{n+1}f(x_{0}+\theta h,y_{0}+\theta k)\quad (x<\theta <1).
+\end{aligned}$
+\end{lstlisting}
+
+~\\
+
+\noindent {\zihao{4}{\heiti 五、极坐标中的二重积分公式}}
+
+~\\
+
+\noindent \setlength\sdim{10pt}
+\shabox{\parbox{12cm}{$\displaystyle{\mathop{\iint}\limits_{D}f(\rho\cos\theta ,\rho\sin\theta)\rho d\rho d\theta
+                =\int_{\alpha}^{\beta}d\theta\int_{{\varphi}_{1}(\theta)}^{{\varphi}_{2}(\theta)}f(\rho\cos\theta ,\rho\sin\theta)\rho d\rho}$}}
+
+\clearpage
+
+\noindent {\zihao{4}{\heiti 六、球坐标中的三重积分公式}}
+
+~\\
+
+\noindent \setlength\sdim{10pt}
+\shabox{\parbox{10cm}{$\displaystyle{\mathop{\iiint}\limits_{D}f(x,y,z)dxdydz=\mathop{\iiint}\limits_{D}F(
+                r,\varphi ,\theta)r^{2}\sin\varphi drd\varphi d\theta}$}}
+
+~\\
+
+\begin{lstlisting}
+$\displaystyle{\mathop{\iiint}\limits_{D}f(x,y,z)dxdydz=\mathop{\iiint}\limits_{D}
+F(r,\varphi ,\theta)r^{2}\sin\varphi drd\varphi d\theta}$
+\end{lstlisting}
+
+~\\
+
+\noindent {\zihao{4}{\heiti 七、格林公式}}
+
+~\\
+
+\noindent \setlength\sdim{10pt}
+\shabox{\parbox{7cm}{$\displaystyle{\mathop{\iint}\limits_{D}(\cfrac{\partial Q}{\partial x}-\cfrac{\partial P}{\partial y})dxdy=\mathop{\oint}_{L}Pdx+Qdy}$}}
+
+~\\
+
+\begin{lstlisting}
+$\displaystyle{\mathop{\iint}\limits_{D}(\cfrac{\partial Q}{\partial x}-\cfrac{\partial P}{\partial y})dxdy=\mathop{\oint}_{L}Pdx+Qdy}$
+\end{lstlisting}
+
+~\\
+
+\noindent {\zihao{4}{\heiti 八、对面积的曲面积分}}
+
+~\\
+
+\noindent \setlength\sdim{10pt}
+\shabox{\parbox{12cm}{$\displaystyle{\mathop{\iint}\limits_{\Sigma}f(x,y,z)dS=\mathop{\iint}\limits_{D_{xy}}f[x,y,z(x,y)]\sqrt{1+z_{x}^{2}(x,y)+z_{y}^{2}(x,y)}dxdy}$}}
+
+~\\
+
+\begin{lstlisting}
+$\displaystyle{\mathop{\iint}\limits_{\Sigma}f(x,y,z)dS=\mathop{\iint}\limits
+_{D_{xy}}f[x,y,z(x,y)]\sqrt{1+z_{x}^{2}(x,y)+z_{y}^{2}(x,y)}dxdy}$
+\end{lstlisting}
+%根据需要选择是否添加摘要	
+%\centerline{\textbf{\zihao{4} {\heiti 摘要}}}%四号、黑体、居中的文章摘要
+
+%根据需要选择是否添加关键词
+%\textbf{关键词}%粗体显示的文章关键词
+
+%根据需要选择是否添加目录
+%\begin{文章目录}
+%\clearpage
+%\begin{center} 
+%\tableofcontents%居中显示的文章目录
+%\end{center}
+%\end{文章目录}
+
+\end{document}
+%\end{正文结束}
